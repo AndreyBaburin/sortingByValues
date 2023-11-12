@@ -17,25 +17,25 @@ public class CalculationTest {
 
     @Test
     void testCreatePost() {
-        String text = "aaaaabcccchelloword";
-        Value result = calculation.createPost(text);
-        Assertions.assertEquals(text, result.getIncomingValue());
+        String message = "aaaaabcccchelloword";
+        Value value = calculation.createPost(message);
+        Assertions.assertEquals(message, value.getIncomingValue());
     }
 
     @Test
     void testUpdatePost() {
-        String text1 = "aaaaabcccchelloword";
-        Value value1 = calculation.createPost(text1);
-        String text2 = "aaaaabcccc";
-        Value value2 = calculation.updatePost(text2);
-        Assertions.assertEquals(text2, value2.getIncomingValue());
+        String message1 = "aaaaabcccchelloword";
+        Value value1 = calculation.createPost(message1);
+        String message2 = "aaaaabcccc";
+        Value value2 = calculation.updatePost(message2);
+        Assertions.assertEquals(message2, value2.getIncomingValue());
         Assertions.assertNotEquals(value1, value2);
     }
 
     @Test
     void testDelete() {
-        String text = "aaaaabcccchelloword";
-        calculation.createPost(text);
+        String message = "aaaaabcccchelloword";
+        calculation.createPost(message);
         calculation.delete();
         Assertions.assertNull(calculation.getValue());
     }
